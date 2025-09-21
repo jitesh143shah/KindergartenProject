@@ -1,13 +1,52 @@
+  // import { Route, Routes } from "react-router-dom";
+  // import "./App.css";
+  // import Navbar from "./components/Navbar/Navbar";
+  // import Home from "./Pages/Home";
+  // import AuthForm from "./Pages/Auth/AuthForm";
 
-import './App.css'
+  // function App() {
+  //   return (
+  //     <>
+  //       <Routes>
+  //         <Route path="/" element={<Home />} >
+  //         <Route path="/signup" element={<AuthForm type="signup"/>}/>
+  //         <Route path="/signin" element={<AuthForm type="signin"/>}/>
+
+  //         </Route>
+  //       </Routes>
+  //     </>
+  //   );
+  // }
+
+  // export default App;
+
+// App.jsx
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./Pages/Home";
+import AuthForm from "./Pages/Auth/AuthForm";
+import Loader from "./components/Loader/Loader";
+import useRouteLoader from "./hooks/useRouteLoader";
+import { PageNotFound } from "./Pages/imports";
 
 function App() {
-
+  // set waitForImages: true if you want loader to wait until images load on each page
+  const loading = useRouteLoader({ delay: 700, waitForImages: false });
 
   return (
     <>
-    <div>hello</div></>
-  )
+      {loading && <Loader />}
+
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<AuthForm type="signup" />} />
+        <Route path="/signin" element={<AuthForm type="signin" />} />
+        <Route path="*" element={<PageNotFound/>} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;
+
