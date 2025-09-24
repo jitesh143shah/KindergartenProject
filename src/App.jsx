@@ -1,24 +1,24 @@
-  // import { Route, Routes } from "react-router-dom";
-  // import "./App.css";
-  // import Navbar from "./components/Navbar/Navbar";
-  // import Home from "./Pages/Home";
-  // import AuthForm from "./Pages/Auth/AuthForm";
+// import { Route, Routes } from "react-router-dom";
+// import "./App.css";
+// import Navbar from "./components/Navbar/Navbar";
+// import Home from "./Pages/Home";
+// import AuthForm from "./Pages/Auth/AuthForm";
 
-  // function App() {
-  //   return (
-  //     <>
-  //       <Routes>
-  //         <Route path="/" element={<Home />} >
-  //         <Route path="/signup" element={<AuthForm type="signup"/>}/>
-  //         <Route path="/signin" element={<AuthForm type="signin"/>}/>
+// function App() {
+//   return (
+//     <>
+//       <Routes>
+//         <Route path="/" element={<Home />} >
+//         <Route path="/signup" element={<AuthForm type="signup"/>}/>
+//         <Route path="/signin" element={<AuthForm type="signin"/>}/>
 
-  //         </Route>
-  //       </Routes>
-  //     </>
-  //   );
-  // }
+//         </Route>
+//       </Routes>
+//     </>
+//   );
+// }
 
-  // export default App;
+// export default App;
 
 // App.jsx
 import { Route, Routes } from "react-router-dom";
@@ -28,6 +28,7 @@ import AuthForm from "./Pages/Auth/AuthForm";
 import Loader from "./components/Loader/Loader";
 import useRouteLoader from "./hooks/useRouteLoader";
 import { PageNotFound } from "./Pages/imports";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   // set waitForImages: true if you want loader to wait until images load on each page
@@ -40,13 +41,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/signup" element={<AuthForm type="signup" />} />
         <Route path="/signin" element={<AuthForm type="signin" />} />
-        <Route path="*" element={<PageNotFound/>} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Footer />
     </>
   );
 }
 
 export default App;
-
