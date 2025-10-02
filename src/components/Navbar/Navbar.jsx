@@ -6,11 +6,30 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
 import { AuthForm } from "../../Pages/imports";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [isFixed, setIsFixed] = useState(false);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     // When scrolled more than 50px, make navbar fixed
+  //     setIsFixed(window.scrollY > 50);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsFixed(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <div className="bg-primary text-white">
+      <div className="bg-primary text-white ">
         <div
           className="container  flex justify-between 
         items-center py-2"
@@ -48,12 +67,19 @@ const Navbar = () => {
               className="flex items-center justify-center gap-1 "
             >
               <PiSignInBold />
-              <span>Signin</span>
+              <span>Login</span>
             </Link>
           </div>
         </div>
       </div>
-      <div className="bg-white shadow-md">
+      <div
+        //  className="bg-white shadow-md "
+        className={`w-full  duration-500   ${
+          isFixed
+            ? "fixed top-0 left-0  bg-white shadow-md z-50 duration-500 "
+            : "relative bg-transarent  bg-white shadow-md duration-500 "
+        }`}
+      >
         <div className="container">
           <div className="flex justify-between py-5 items-center ">
             <div className="flex items-center justify-center">
