@@ -20,5 +20,4 @@ export const Navlinks = [
     title: "contact",
     link: "/contact",
   },
-  {},
 ];

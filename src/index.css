@@ -1,20 +1,19 @@
 @import "tailwindcss";
 
-
 @layer components {
   .container {
     @apply md:max-w-6xl  sm:max-w-4xl  mx-auto px-10 md:px-6 overflow-hidden;
   }
 }
 
-@theme{
---color-primary: #ed078b;
---color-secondary: #1bd8dd;
---color-primary-blue: #4255a4;
---color-primary-yellow: #fbce0f;
---color-secondary-blue: #423f8d;
---primary-primary-cyan: #19dcdd;
---font-primary:Concert One;
---font-serif:Young Serif;
+@theme {
+  --color-primary: #ed078b;
+  --color-secondary: #1bd8dd;
+  --color-primary-blue: #4255a4;
+  --color-primary-yellow: #fbce0f;
+  --color-secondary-blue: #423f8d;
+  --primary-primary-cyan: #19dcdd;
 
+  --font-primary: Concert One;
+  --font-serif: Young Serif;
 }

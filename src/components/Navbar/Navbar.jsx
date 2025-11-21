@@ -21,7 +21,7 @@ const Navbar = () => {
   // }, []);
   useEffect(() => {
     const handleScroll = () => {
-      setIsFixed(window.scrollY > 50);
+      setIsFixed(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -50,12 +50,14 @@ const Navbar = () => {
           </div>
           <div className="flex items-center justify-center gap-5">
             <ul className="flex  gap-5 ">
-              {SocialLinks.map(({ icons }, index) => {
-                const Icons = icons;
+              {SocialLinks.map(({ icons: Icons }, index) => {
                 return (
-                  <li key={index} className="duration-500 hover:scale-x-[-1]">
+                  <li
+                    key={index}
+                    className="hover:scale-x-[-1] hover:bg-secondary bg-white/20 rounded-full  px-1 py-1 duration-500"
+                  >
                     <Link to="/">
-                      <Icons className="text-white text-[18px]" />
+                      <Icons className="text-white text-[18px]  " />
                     </Link>
                   </li>
                 );
@@ -64,9 +66,9 @@ const Navbar = () => {
 
             <Link
               to="/signin"
-              className="flex items-center justify-center gap-1 "
+              className="flex items-center justify-center gap-3 group "
             >
-              <PiSignInBold />
+              <PiSignInBold className="group-hover:translate-x-2.5 duration-500" />
               <span>Login</span>
             </Link>
           </div>
@@ -74,7 +76,7 @@ const Navbar = () => {
       </div>
       <div
         //  className="bg-white shadow-md "
-        className={`w-full  duration-500   ${
+        className={`w-full  duration-500 transition: all 0.4s ease;  ${
           isFixed
             ? "fixed top-0 left-0  bg-white shadow-md z-50 duration-500 "
             : "relative bg-transarent  bg-white shadow-md duration-500 "
@@ -95,7 +97,7 @@ const Navbar = () => {
                     key={index}
                     className="group flex flex-col gap-5 group relative "
                   >
-                    <li className="text-secondary-blue hover:text-primary group-hover:w-full  ">
+                    <li className="text-secondary-blue hover:text-primary group  ">
                       {title}
                       <p className="top-10 left-0   absolute h-[4px] bg-primary w-0 group-hover:w-full duration-500" />
                     </li>
@@ -106,10 +108,18 @@ const Navbar = () => {
               <div>
                 <Link
                   to="/"
-                  className="px-10 py-4 rounded-full text-white 
-               bg-gradient-to-l from-secondary to-primary 
-               hover:from-primary hover:to-secondary  duration-700
-               transition-all hover:duration-700 ease-in-out translate-0 hover:translate-1 "
+                  className=" 
+                   px-10 py-4 rounded-full text-white bg-primary hover:bg-secondary duration-500
+                  
+
+    
+                  
+                  "
+
+                  //     className="px-10 py-4 rounded-full text-white
+                  //  bg-gradient-to-l from-secondary to-primary
+                  //  hover:from-primary hover:to-secondary  duration-900
+                  //  transition-all hover:duration-700   "
                 >
                   <button> Enroll Now</button>
                 </Link>
