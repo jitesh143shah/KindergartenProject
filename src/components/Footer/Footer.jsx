@@ -23,13 +23,13 @@ const Footer = () => {
               </p>
               <div>
                 <ul className="flex  gap-5 py-10 ">
-                  {SocialLinks.map(({ icons: Iconn, href }, index) => (
+                  {SocialLinks.map(({ icons: Icon, href }, index) => (
                     <li
                       key={index}
                       className="px-2 py-2 bg-secondary-blue/20 hover:bg-primary duration-500  rounded-full"
                     >
                       <Link to={href} target="_blank">
-                        <Iconn className="text-xl " />
+                        <Icon className="text-xl " />
                       </Link>
                     </li>
                   ))}

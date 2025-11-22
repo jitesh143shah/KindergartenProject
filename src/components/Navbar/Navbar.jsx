@@ -21,7 +21,7 @@ const Navbar = () => {
   // }, []);
   useEffect(() => {
     const handleScroll = () => {
-      setIsFixed(window.scrollY > 20);
+      setIsFixed(window.scrollY > 200);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -109,14 +109,8 @@ const Navbar = () => {
                 <Link
                   to="/"
                   className=" 
-                   px-10 py-4 rounded-full text-white bg-primary hover:bg-secondary duration-500
-                  
-
-    
-                  
-                  "
-
-                  //     className="px-10 py-4 rounded-full text-white
+                   px-10 py-4 rounded-full text-white bg-primary hover:bg-secondary duration-500                  
+                  " //className="px-10 py-4 rounded-full text-white
                   //  bg-gradient-to-l from-secondary to-primary
                   //  hover:from-primary hover:to-secondary  duration-900
                   //  transition-all hover:duration-700   "
