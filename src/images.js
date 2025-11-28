@@ -5,3 +5,8 @@ export { default as About2 } from "./assets/about2.png";
 export { default as AboutIcon1 } from "./assets/about-icon1.svg";
 export { default as AboutIcon2 } from "./assets/about-icon2.svg";
 export { default as AboutIcon3 } from "./assets/about-icon3.svg";
+export { default as section_bg3 } from "./assets/section_bg3.png";
+export { default as instra1 } from "./assets/instra1.png";
+export { default as instra2 } from "./assets/instra2.png";
+export { default as instra3 } from "./assets/instra3.png";
+export { default as instra4 } from "./assets/instra4.png";
