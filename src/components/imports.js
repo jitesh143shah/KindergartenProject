@@ -1,2 +1,8 @@
 export { default as Navbar } from "./Navbar/Navbar";
 export { default as Footer } from "./Footer/Footer";
+export { default as EventsSection } from "./EventsSection/EventsSection";
+export { default as About } from "./About/About";
+export { default as Classes } from "./Classes/Classes";
+export { default as Hero } from "./Hero/Hero";
+export { default as Loader } from "./Loader/Loader";
+export { default as TeacherSection } from "./TeacherSection/TeacherSection";

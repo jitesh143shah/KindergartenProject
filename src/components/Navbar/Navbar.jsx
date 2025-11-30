@@ -5,7 +5,6 @@ import { SocialLinks } from "../../constant/SocialLinks";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
-import { AuthForm } from "../../Pages/imports";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -51,6 +50,7 @@ const Navbar = () => {
           <div className="flex items-center justify-center gap-5">
             <ul className="flex  gap-5 ">
               {SocialLinks.map(({ icons: Icons }, index) => {
+                const IconComponent = Icons;
                 return (
                   <li
                     key={index}
@@ -108,14 +108,27 @@ const Navbar = () => {
               <div>
                 <Link
                   to="/"
-                  className=" 
-                   px-10 py-4 rounded-full text-white bg-primary hover:bg-secondary duration-500                  
-                  " //className="px-10 py-4 rounded-full text-white
+                  //className="px-10 py-4 rounded-full text-white
                   //  bg-gradient-to-l from-secondary to-primary
                   //  hover:from-primary hover:to-secondary  duration-900
                   //  transition-all hover:duration-700   "
                 >
-                  <button> Enroll Now</button>
+                  <button
+                    className="
+    relative overflow-hidden bg-primary-cyan
+    border   font-bold capitalize
+    px-13 py-4 rounded-full
+    before:z-[-10]
+    before:content-[''] before:absolute before:top-[-100%] before:left-0
+    before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
+    hover:before:top-0
+     z-10
+    text-white
+  "
+                  >
+                    {" "}
+                    Enroll Now
+                  </button>
                 </Link>
               </div>
             </div>

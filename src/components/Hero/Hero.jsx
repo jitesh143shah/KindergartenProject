@@ -56,7 +56,7 @@ const Hero = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex">
-          <div className="bg-[url('../../src/assets/hero.png')] bg-cover bg-center">
+          <div className="bg-[url('../../src/assets/instra2.png')] bg-cover bg-center">
             <div className="container">
               <div>
                 <div className="grid grid-cols-2 py-25 px-10">

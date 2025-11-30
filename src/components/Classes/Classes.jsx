@@ -28,7 +28,7 @@ const Classes = () => {
                 <div className="text-5xl  font-bold ">
                   <span className="text-secondary-blue">Classes We Offer</span>
                 </div>
-                <p className="w-[80%] mt-10 text-xl text-secondary-blue/90">
+                <p className="w-[70%] mt-10 text-xl text-secondary-blue/90">
                   Our set he for firmament morning sixth subdue today the
                   darkness creeping gathered divide our let god moving today.
                   Moving in fourth air night bring upon lesser subdue fowl male
@@ -45,7 +45,7 @@ const Classes = () => {
                   slidesPerView={3}
                   navigation
                   autoplay={{
-                    delay: 300,
+                    delay: 3000,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true, // 👈 THIS WILL PAUSE ON HOVER
                   }}
@@ -514,16 +514,16 @@ const Classes = () => {
                 <Link to="#">
                   <button
                     className="
-    relative overflow-hidden
-    border border-primary text-primary font-bold capitalize
-    px-13 py-4 rounded-full
-    before:z-[-10]
-    before:content-[''] before:absolute before:top-[-100%] before:left-0
-    before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
-    hover:before:top-0
-     z-10
-    hover:text-white
-  "
+                  relative overflow-hidden
+                  border border-primary text-primary font-bold capitalize
+                  px-13 py-4 rounded-full
+                  before:z-[-10]
+                  before:content-[''] before:absolute before:top-[-100%] before:left-0
+                  before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
+                  hover:before:top-0
+                  z-10
+                  hover:text-white
+                "
                   >
                     More classes
                   </button>
