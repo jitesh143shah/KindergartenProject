@@ -7,4 +7,9 @@
   border-radius: 100%;
   border-color: #ed078959 !important;
   margin: 2px !important;
+  transition: 0.2s all ease-in-out;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: #ffffffd2;
 }

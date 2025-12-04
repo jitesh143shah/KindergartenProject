@@ -10,4 +10,8 @@ export { default as instra1 } from "./assets/instra1.png";
 export { default as instra2 } from "./assets/instra2.png";
 export { default as instra3 } from "./assets/instra3.png";
 export { default as instra4 } from "./assets/instra4.png";
+export { default as team1 } from "./assets/team1.png";
+export { default as team2 } from "./assets/team2.png";
+export { default as team3 } from "./assets/team3.png";
+export { default as testimonial } from "./assets/testimonial.png";
 export { default as section_bg2 } from "./assets/section_bg2.png";

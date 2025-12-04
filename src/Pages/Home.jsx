@@ -2,7 +2,11 @@ import { Outlet } from "react-router-dom";
 import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 import Classes from "../components/Classes/Classes";
-import { EventsSection, TeacherSection } from "../components/imports";
+import {
+  EventsSection,
+  TeacherSection,
+  Testimonials,
+} from "../components/imports";
 
 const Home = () => {
   return (
@@ -13,6 +17,7 @@ const Home = () => {
       <Classes />
       <EventsSection />
       <TeacherSection />
+      <Testimonials />
     </>
   );
 };
