@@ -5,7 +5,7 @@ export const Navlinks = [
   },
   {
     title: "Class",
-    link: "/class",
+    link: "/classes",
   },
 
   {

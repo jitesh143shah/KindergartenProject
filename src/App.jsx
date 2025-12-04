@@ -27,7 +27,7 @@ import Home from "./Pages/Home";
 import AuthForm from "./Pages/Auth/AuthForm";
 import Loader from "./components/Loader/Loader";
 import useRouteLoader from "./hooks/useRouteLoader";
-import { PageNotFound } from "./Pages/imports";
+import { Blog, Classes, PageNotFound } from "./Pages/imports";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -41,6 +41,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/classes" element={<Classes />} />
 
         <Route path="/signup" element={<AuthForm type="signup" />} />
         <Route path="/signin" element={<AuthForm type="signin" />} />

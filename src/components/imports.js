@@ -7,3 +7,4 @@ export { default as Hero } from "./Hero/Hero";
 export { default as Loader } from "./Loader/Loader";
 export { default as TeacherSection } from "./TeacherSection/TeacherSection";
 export { default as Testimonials } from "./Testimonials/Testimonials";
+export { default as Gallery } from "./Gallery/Gallery";
