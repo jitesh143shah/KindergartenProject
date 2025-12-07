@@ -32,7 +32,7 @@ export const ClassesLinks = [
     age: "3-5",
     classes: "30",
     price: "10",
-    closed: true,
+    closed: false,
   },
   {
     image: instra4,
@@ -54,7 +54,7 @@ export const ClassesLinks = [
     age: "3-5",
     classes: "30",
     price: "10",
-    closed: true,
+    closed: false,
   },
   {
     image: instra4,

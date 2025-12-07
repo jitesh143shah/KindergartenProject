@@ -139,7 +139,7 @@ export const TeachersLinks = [
   },
   {
     name: "Buster Hyman",
-    image: team1,
+    image: team2,
     position: "Sport Instructor",
     social: [
       {
@@ -166,7 +166,7 @@ export const TeachersLinks = [
   },
   {
     name: "Buster Hyman",
-    image: team1,
+    image: team3,
     position: "Sport Instructor",
     social: [
       {

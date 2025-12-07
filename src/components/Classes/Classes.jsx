@@ -20,7 +20,7 @@ import "swiper/css/autoplay";
 const Classes = () => {
   return (
     <div>
-      <div className="bg-[url('../../src/assets/section_bg3.png')]">
+      <div className="bg-[url('../../src/assets/section_bg3.png')] bg-cover">
         <div className="container">
           <div className="py-40 ">
             <div className="pb-20 ">

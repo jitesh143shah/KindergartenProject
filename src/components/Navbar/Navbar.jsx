@@ -6,8 +6,12 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
 import { useEffect, useState } from "react";
+import { IoClose, IoMenu } from "react-icons/io5";
+import NavbarResponsive from "./NavbarResponsive";
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   const [isFixed, setIsFixed] = useState(false);
   // useEffect(() => {
   //   const handleScroll = () => {
@@ -25,27 +29,38 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
     <>
-      <div className="bg-primary text-white ">
+      <div className="bg-primary text-white hidden lg:flex ">
         <div
           className="container  flex justify-between 
         items-center py-2"
         >
-          <div className="flex gap-7">
-            <div className="flex gap-2 justify-center items-center hover:text-secondary">
+          <div className="flex flex-col lg:flex-row gap-0 lg:gap-7 text-[10px] lg:text-xl">
+            <Link
+              to="https://www.google.com/maps/search/?api=1&query=57/A,+Green+Lane,+NYC"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-8 juce  items-center hover:text-secondary hover:underline duration-500"
+            >
               <span>
                 <FaLocationDot />
               </span>
               <span className="uppercase">57/A, Green Lane, NYC</span>
-            </div>
-            <div className="flex gap-5 justify-center items-center hover:text-secondary">
+            </Link>
+            <Link
+              to="tel:+10783673692"
+              className="flex gap-5  items-center hover:text-secondary cursor-pointer  hover:underline duration-500"
+            >
               <span>
                 <FaPhoneAlt />
               </span>
-              <span>+10 (78) 367 3692</span>
-            </div>
+              <span className="">+10 (78) 367 3692</span>
+            </Link>
           </div>
           <div className="flex items-center justify-center gap-5">
             <ul className="flex  gap-5 ">
@@ -57,7 +72,7 @@ const Navbar = () => {
                     className="hover:scale-x-[-1] hover:bg-secondary bg-white/20 rounded-full  px-1 py-1 duration-500"
                   >
                     <Link to="/">
-                      <Icons className="text-white text-[18px]  " />
+                      <Icons className="text-white text-[10px] lg:text-[18px]  " />
                     </Link>
                   </li>
                 );
@@ -66,7 +81,7 @@ const Navbar = () => {
 
             <Link
               to="/signin"
-              className="flex items-center justify-center gap-3 group "
+              className="flex items-center justify-center gap-3 group  "
             >
               <PiSignInBold className="group-hover:translate-x-2.5 duration-500" />
               <span>Login</span>
@@ -90,51 +105,69 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center justify-center gap-5 capitalize font-bold">
-              <ul className="flex gap-5 ">
-                {Navlinks.map(({ link, title }, index) => (
+              <div className="hidden lg:flex items-center gap-5">
+                <ul className="flex gap-5 ">
+                  {Navlinks.map(({ link, title }, index) => (
+                    <Link
+                      to={link}
+                      key={index}
+                      className="group flex flex-col gap-5 group relative "
+                    >
+                      <li className="text-secondary-blue hover:text-primary group  ">
+                        {title}
+                        <p className="top-10 left-0   absolute h-[4px] bg-primary w-0 group-hover:w-full duration-500" />
+                      </li>
+                    </Link>
+                  ))}
+                </ul>
+                <div>
                   <Link
-                    to={link}
-                    key={index}
-                    className="group flex flex-col gap-5 group relative "
+                    to="/"
+                    //className="px-10 py-4 rounded-full text-white
+                    //  bg-gradient-to-l from-secondary to-primary
+                    //  hover:from-primary hover:to-secondary  duration-900
+                    //  transition-all hover:duration-700   "
                   >
-                    <li className="text-secondary-blue hover:text-primary group  ">
-                      {title}
-                      <p className="top-10 left-0   absolute h-[4px] bg-primary w-0 group-hover:w-full duration-500" />
-                    </li>
-                  </Link>
-                ))}
-              </ul>
-
-              <div>
-                <Link
-                  to="/"
-                  //className="px-10 py-4 rounded-full text-white
-                  //  bg-gradient-to-l from-secondary to-primary
-                  //  hover:from-primary hover:to-secondary  duration-900
-                  //  transition-all hover:duration-700   "
-                >
-                  <button
-                    className="
-    relative overflow-hidden bg-primary-cyan
-    border   font-bold capitalize
-    px-13 py-4 rounded-full
-    before:z-[-10]
-    before:content-[''] before:absolute before:top-[-100%] before:left-0
-    before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
-    hover:before:top-0
-     z-10
-    text-white
+                    <button
+                      className="
+                      relative overflow-hidden bg-primary-cyan
+                      border   font-bold capitalize
+                      px-13 py-4 rounded-full
+                      before:z-[-10]
+                      before:content-[''] before:absolute before:top-[-100%] before:left-0
+                      before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
+                      hover:before:top-0
+                      z-10
+                      text-white
   "
-                  >
-                    {" "}
-                    Enroll Now
-                  </button>
-                </Link>
+                    >
+                      Enroll Now
+                    </button>
+                  </Link>
+                </div>
+              </div>
+              <div>
+                {/* Mobile Menu Icon */}
+                <div className="lg:hidden flex text-primary z-50 justify-center items-center">
+                  {showMenu ? (
+                    <IoClose
+                      onClick={toggleMenu}
+                      className="text-3xl md:text-5xl duration-500 cursor-pointer"
+                    />
+                  ) : (
+                    <IoMenu
+                      onClick={toggleMenu}
+                      className="text-3xl md:text-5xl duration-500 cursor-pointer"
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* Mobile Menu */}
+      <NavbarResponsive showMenu={showMenu} />
     </>
   );
 };

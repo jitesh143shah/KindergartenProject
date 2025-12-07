@@ -85,7 +85,7 @@ const TeacherSection = () => {
                             <ul
                               className=" absolute top-65 left-0  inset-0
                               flex justify-center  gap-5 
-                              opacity-0 -z-10
+                              opacity-0 -z-0
                               group-hover:opacity-100
                               duration-500  "
                             >
@@ -111,7 +111,10 @@ const TeacherSection = () => {
                                       ${delays[index2]}
                                     `}
                                   >
-                                    <Link to={item.link}>
+                                    <Link
+                                      to={item.link}
+                                      className="cursor-pointer"
+                                    >
                                       <Icon className="text-white  hover:text-secondary rounded-full duration-300" />
                                     </Link>
                                   </li>
