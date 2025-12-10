@@ -23,13 +23,13 @@ const TeacherSection = () => {
     <div>
       <div>
         <div className="container">
-          <div className="py-35">
+          <div className=" py-20 md:py-35">
             <div className="pb-15 ">
               <div className="text-center flex flex-col items-center justify-center">
-                <div className="text-5xl  font-bold ">
+                <div className="text-3xl  lg:text-5xl  font-bold ">
                   <span className="text-secondary-blue">Expert Teachers</span>
                 </div>
-                <p className="w-[70%] mt-10 text-xl text-secondary-blue/90">
+                <p className="w-[70%] mt-10 lg:text-xl text-[14px] text-secondary-blue/90">
                   Our set he for firmament morning sixth subdue today the
                   darkness creeping gathered divide our let god moving today.
                   Moving in fourth air night bring upon lesser subdue fowl male
@@ -49,7 +49,12 @@ const TeacherSection = () => {
                       Autoplay,
                     ]}
                     spaceBetween={50}
-                    slidesPerView={4}
+                    slidesPerView={1}
+                    breakpoints={{
+                      640: { slidesPerView: 2 },
+                      768: { slidesPerView: 3 },
+                      1024: { slidesPerView: 4 },
+                    }}
                     navigation
                     autoplay={{
                       delay: 3000,
@@ -65,7 +70,7 @@ const TeacherSection = () => {
                               <img
                                 src={data.image}
                                 alt={data.image}
-                                className="rounded-4xl w-full h-full duration-500  group-hover:duration-500"
+                                className="rounded-4xl  w-full h-full duration-500  group-hover:duration-500"
                               />
                               <span
                                 className=" absolute inset-0 
@@ -77,13 +82,13 @@ const TeacherSection = () => {
                               ></span>
                             </span>
                             <div className="flex z-0 flex-col justify-center items-center gap-2 mt-5">
-                              <span className="font-bold text-2xl text-secondary-blue hover:text-primary duration-500">
+                              <span className="font-bold text-xl md:text-2xl text-secondary-blue hover:text-primary duration-500">
                                 {data.name}
                               </span>
                               <span>{data.position}</span>
                             </div>
                             <ul
-                              className=" absolute top-65 left-0  inset-0
+                              className=" absolute top-1/2 left-0  inset-0
                               flex justify-center  gap-5 
                               opacity-0 -z-0
                               group-hover:opacity-100
@@ -115,7 +120,7 @@ const TeacherSection = () => {
                                       to={item.link}
                                       className="cursor-pointer"
                                     >
-                                      <Icon className="text-white  hover:text-secondary rounded-full duration-300" />
+                                      <Icon className="text-white text-2xl md:text-xl  hover:text-secondary rounded-full duration-300" />
                                     </Link>
                                   </li>
                                 );

@@ -1,4 +1,5 @@
 export { default as Navbar } from "./Navbar/Navbar";
+export { default as NavbarResponsive } from "./Navbar/NavbarResponsive";
 export { default as Footer } from "./Footer/Footer";
 export { default as EventsSection } from "./EventsSection/EventsSection";
 export { default as About } from "./About/About";
@@ -8,3 +9,5 @@ export { default as Loader } from "./Loader/Loader";
 export { default as TeacherSection } from "./TeacherSection/TeacherSection";
 export { default as Testimonials } from "./Testimonials/Testimonials";
 export { default as Gallery } from "./Gallery/Gallery";
+export { default as ScrollToTop } from "./ScrollToTop/ScrollToTop";
+export { default as ResponsiveScrollToTop } from "./ScrollToTop/ResponsiveScrollToTop";

@@ -2,7 +2,7 @@ import React from "react";
 import { GalleryLinks } from "../../constant/GalleryLinks";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper core and required modules
-import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+import { Scrollbar, A11y, Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "../../App.css";
@@ -20,7 +20,12 @@ const Gallery = () => {
             <Swiper // install Swiper modules
               modules={[Scrollbar, A11y, Autoplay]}
               spaceBetween={false}
-              slidesPerView={5}
+              slidesPerView={2}
+              breakpoints={{
+                640: { slidesPerView: 3 },
+                768: { slidesPerView: 4 },
+                1024: { slidesPerView: 5 },
+              }}
               loop={true}
               autoplay={{
                 delay: 3000,

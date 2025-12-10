@@ -4,18 +4,19 @@ import { Logo } from "../../images";
 import { Navlinks } from "../../constant/Navlinks";
 import { AboutUsLinks } from "../../constant/AboutUsLinks";
 import { FaHeart } from "react-icons/fa";
+import { ResponsiveScrollToTop, ScrollToTop } from "../imports";
 
 const Footer = () => {
   return (
     <div className="bg-primary-blue px-0  py-25 text-white">
       <div className="container">
         <div>
-          <div className="grid grid-cols-[60%_40%] justify-center gap-0   ">
+          <div className="grid lg:grid-cols-[60%_40%] grid-cols-1 justify-center gap-0   ">
             <div className=" flex flex-col gap-5 ">
               <div>
                 <img src={Logo} alt="" />
               </div>
-              <p className="text-justify w-[75%] ">
+              <p className="text-justify w-full lg:w-[75%] text-[14px] ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ut
                 rerum ad quia tempore eligendi! Sunt dolor dignissimos nemo ad!
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ut
@@ -41,7 +42,9 @@ const Footer = () => {
             </div>
             <div className="flex  justify-between">
               <div>
-                <span className="font-bold text-2xl  py-2">Quick Links</span>
+                <span className="font-bold text-xl lg:text-2xl  py-2">
+                  Quick Links
+                </span>
                 <div>
                   <ul>
                     {Navlinks.map(({ title, link }, index) => (
@@ -56,7 +59,7 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <span className="font-bold text-2xl">About Us</span>
+                <span className="font-bold text-xl lg:text-2xl">About Us</span>
                 <ul className="text-white">
                   {AboutUsLinks.map(({ title }, index) => (
                     <li
@@ -71,14 +74,20 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center text-[18px] pt-20">
-          Copyright <span>© &nbsp;{new Date().getFullYear()} &nbsp;</span> All
-          rights reserved | This template is made with &nbsp;
+        <div className="flex  flex-col md:flex-row text-center items-center justify-center md:text-[14px] lg:text-[18px] pt-20">
+          Copyright <span>© &nbsp;{new Date().getFullYear()} &nbsp;</span>
+          All rights reserved | This template is made with &nbsp;
           <FaHeart className="text-secondary hover:text-primary duration-500" />
           &nbsp; by &nbsp;
           <span className="text-secondary hover:underline hover:text-primary duration-500">
             <Link>Colorlib</Link>
           </span>
+        </div>
+        <div className="md:hidden">
+          <ResponsiveScrollToTop />
+        </div>
+        <div className="hidden md:flex underline cursor-pointer">
+          <ScrollToTop />
         </div>
       </div>
     </div>

@@ -18,8 +18,8 @@ import "swiper/css/autoplay";
 const Testimonials = () => {
   return (
     <div>
-      <div className="bg-[url('../../src/assets/section_bg3.png')] bg-cover">
-        <div className="container py-40">
+      <div className="bg-[url('../../src/assets/section_bg3.png')] bg-cover bg-center">
+        <div className="container py-20 md:py-40">
           <div>
             <Swiper // install Swiper modules
               modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -27,7 +27,7 @@ const Testimonials = () => {
               slidesPerView={1}
               navigation
               autoplay={{
-                delay: 3000,
+                delay: 30000000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true, // 👈 THIS WILL PAUSE ON HOVER
               }}
@@ -37,15 +37,15 @@ const Testimonials = () => {
                   <li key={index}>
                     <SwiperSlide className="group">
                       <div className="flex flex-col items-center">
-                        <div className="flex flex-col items-center gap-15">
+                        <div className="flex flex-col items-center gap-10 lg:gap-15">
                           <div className="flex  justify-center">
                             <img
                               src={data.icon}
                               alt="Icons"
-                              className="group-hover:rotate-180  duration-500"
+                              className="group-hover:rotate-180  duration-500 h-10 w-10 md:h-15 md:w-15 lg:h-20  lg:w-20"
                             />
                           </div>
-                          <p className="text-center text-2xl w-[80%] text-secondary-blue/80">
+                          <p className="text-center text-[16px] md:text-xl lg:text-2xl w-[70%] md:w-[80%] text-secondary-blue/80">
                             "{data.description}"
                           </p>
                         </div>

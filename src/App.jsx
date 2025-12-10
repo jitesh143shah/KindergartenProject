@@ -37,13 +37,11 @@ function App() {
   return (
     <>
       {loading && <Loader />}
-
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/classes" element={<Classes />} />
-
         <Route path="/signup" element={<AuthForm type="signup" />} />
         <Route path="/signin" element={<AuthForm type="signin" />} />
         <Route path="*" element={<PageNotFound />} />

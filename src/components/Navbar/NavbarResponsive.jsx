@@ -1,4 +1,3 @@
-import React from "react";
 import { Logo } from "../../images";
 import { Link } from "react-router-dom";
 import { Navlinks } from "../../constant/Navlinks";
@@ -11,11 +10,11 @@ const NavbarResponsive = ({ showMenu }) => {
   return (
     <>
       <div>
-        <div className=" z-0">
+        <div className=" z-0 ">
           <div
             className={` lg:hidden
            fixed h-screen w-[75%] bg-primary-blue
-           flex flex-col justify-between px-8 py-6 pt-6 z-50
+           flex flex-col justify-between px-8 py-6  z-50
            duration-500 transition-all ease-in-out 
            overflow-y-scroll    
    
@@ -24,38 +23,12 @@ const NavbarResponsive = ({ showMenu }) => {
           >
             <div className="flex flex-col gap-4 sm:gap-8">
               <div className="flex items-center justify-between flex-col">
-                <div className="flex gap-5 sm:gap-10 flex-col sm:flex-row  font-bold">
-                  <Link to="/">
-                    <button
-                      className="
-                      relative overflow-hidden bg-primary-cyan border   font-bold capitalize
-                     py-2 px-13 sm:py-4 rounded-2xl before:z-[-10]
-                      before:content-[''] before:absolute before:top-[-100%] before:left-0
-                      before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
-                      hover:before:top-0 z-10 text-white "
-                    >
-                      Enroll Now
-                    </button>
-                  </Link>
-                  <Link
-                    to="/signin"
-                    className="flex items-center justify-center gap-3 group  relative overflow-hidden bg-primary-cyan
-                      border   font-bold capitalize px-13 py-2 sm:py-4 rounded-2xl before:z-[-10]
-                      before:content-[''] before:absolute before:top-[-100%] before:left-0
-                      before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
-                      hover:before:top-0 z-10 text-white  "
-                  >
-                    <PiSignInBold className="group-hover:translate-x-2.5 duration-500" />
-                    <span>Login</span>
-                  </Link>
-                </div>
-                <div className="mt-5 sm:mt-10 flex items-center justify-center hover:bg-primary/40 duration-500 p-3 rounded-2xl">
+                <div className="my-10 flex items-center justify-center hover:bg-primary/40 duration-500 p-3 rounded-2xl">
                   <Link to="/" className="">
                     <img src={Logo} alt={Logo} />
                   </Link>
                 </div>
               </div>
-
               <div className="">
                 <ul className="flex flex-col  hover: rounded-2xl p-2 hover:bg-primary/40">
                   {Navlinks.map((data, index) => (
@@ -67,6 +40,31 @@ const NavbarResponsive = ({ showMenu }) => {
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div className="flex items-center justify-center gap-5 sm:gap-10 flex-col sm:flex-row  font-bold">
+                <Link
+                  to="/"
+                  className="flex justify-center items-center
+                      relative overflow-hidden bg-primary-cyan border   font-bold capitalize
+                     py-2 px-13 sm:py-4 rounded-2xl before:z-[-10]
+                      before:content-[''] before:absolute before:top-[-100%] before:left-0
+                      before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
+                      hover:before:top-0 z-10 text-white "
+                >
+                  <button>Enroll Now</button>
+                </Link>
+
+                <Link
+                  to="/signin"
+                  className=" flex items-center justify-center gap-3 group  relative overflow-hidden bg-primary-cyan
+                      border   font-bold capitalize px-13 py-2 sm:py-4 rounded-2xl before:z-[-10]
+                      before:content-[''] before:absolute before:top-[-100%] before:left-0
+                      before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
+                      hover:before:top-0 z-10 text-white  "
+                >
+                  <PiSignInBold className="group-hover:translate-x-2.5 duration-500" />
+                  <span>Login</span>
+                </Link>
               </div>
               <div>
                 <ul className="flex justify-center items-center gap-5">
@@ -114,7 +112,6 @@ const NavbarResponsive = ({ showMenu }) => {
                   </Link>
                 </div>
               </div>
-
               <div className=" flex flex-col  items-center justify-center text-white gap-2  ">
                 Copyright
                 <span className="flex">

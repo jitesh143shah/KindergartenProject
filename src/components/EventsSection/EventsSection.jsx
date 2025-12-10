@@ -39,22 +39,22 @@ const EventsSection = () => {
     <div>
       <div className="bg-[url('../../src/assets/section_bg2.png')]  bg-cover bg-center">
         <div className="container">
-          <div className="flex items-center justify-center p-40 ">
-            <div className="w-[60%]">
-              <div className="flex gap-4 justify-center items-center flex-col px-15 py-15 bg-white rounded-4xl">
+          <div className="flex items-center justify-center p-20 lg:p-40 ">
+            <div className="w-full lg::w-[60%]">
+              <div className="flex gap-6 justify-center items-center flex-col px-15 py-15 bg-white rounded-4xl">
                 <div>
-                  <div className="text-primary font-bold text-2xl">
+                  <div className="text-primary font-bold text-xl md:text-2xl">
                     {`${new Date().getDate()} ${new Date().toLocaleString(
                       "en-US",
                       { month: "short" }
                     )} ${new Date().getFullYear()}`}
                   </div>
                 </div>
-                <div className="text-4xl font-bold text-primary-blue">
+                <div className="text-2xl md:text-4xl font-bold text-primary-blue text-center">
                   Drawing Event
                 </div>
                 <div>
-                  <p className="text-justify text-secondary-blue/90">
+                  <p className="text-justify text-secondary-blue/90 text-[14px] lg:text-xl">
                     Our set he for firmament morning sixth subdue today the
                     darkness creeping gathered divide our let god moving today
                     moving in fourth.
@@ -64,10 +64,8 @@ const EventsSection = () => {
                   <Link to="#">
                     <button
                       className="
-                      relative overflow-hidden
-                      bg-primary text-white font-bold capitalize
-                      px-13 py-4 rounded-full
-                      before:z-[-10]
+                      relative overflow-hidden bg-primary text-white font-bold capitalize
+                      px-8 lg:px-13   py-4 rounded-full before:z-[-10] text-[14px] lg:text-xl
                       before:content-[''] before:absolute before:left-[-100%] before:top-0
                       before:w-full before:h-full before:bg-black/10 before:transition-all before:duration-500
                       hover:before:left-0
@@ -80,34 +78,34 @@ const EventsSection = () => {
                   </Link>
                 </div>
                 <div className="counter">
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 flex-col md:flex-row  text-xl lg:text-3xl ">
                     {/* Days */}
-                    <div className="bg-[#FFF8E6] p-4 rounded-lg text-center w-20">
-                      <div className="text-3xl font-bold text-[#2B2E9F]">
+                    <div className="bg-[#FFF8E6] p-2 lg:p-4 rounded-lg text-center w-20">
+                      <div className=" font-bold text-[#2B2E9F]">
                         {String(timeLeft.days).padStart(2, "0")}
                       </div>
                       <p className="text-sm text-gray-600">Days</p>
                     </div>
 
                     {/* Hours */}
-                    <div className="bg-[#FFF8E6] p-4 rounded-lg text-center w-20">
-                      <div className="text-3xl font-bold text-[#2B2E9F]">
+                    <div className="bg-[#FFF8E6] p-2 lg:p-4 rounded-lg text-center w-20">
+                      <div className=" font-bold text-[#2B2E9F]">
                         {String(timeLeft.hours).padStart(2, "0")}
                       </div>
                       <p className="text-sm text-gray-600">Hrs</p>
                     </div>
 
                     {/* Minutes */}
-                    <div className="bg-[#FFF8E6] p-4 rounded-lg text-center w-20">
-                      <div className="text-3xl font-bold text-[#2B2E9F]">
+                    <div className="bg-[#FFF8E6] p-2 lg:p-4 rounded-lg text-center w-20">
+                      <div className=" font-bold text-[#2B2E9F]">
                         {String(timeLeft.minutes).padStart(2, "0")}
                       </div>
                       <p className="text-sm text-gray-600">Mins</p>
                     </div>
 
                     {/* Seconds */}
-                    <div className="bg-[#FFF8E6] p-4 rounded-lg text-center w-20">
-                      <div className="text-3xl font-bold text-[#2B2E9F]">
+                    <div className="bg-[#FFF8E6] p-2 lg:p-4 rounded-lg text-center w-20">
+                      <div className=" font-bold text-[#2B2E9F]">
                         {String(timeLeft.seconds).padStart(2, "0")}
                       </div>
                       <p className="text-sm text-gray-600">Secs</p>

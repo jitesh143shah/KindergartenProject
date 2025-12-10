@@ -20,15 +20,15 @@ import "swiper/css/autoplay";
 const Classes = () => {
   return (
     <div>
-      <div className="bg-[url('../../src/assets/section_bg3.png')] bg-cover">
+      <div className="bg-[url('../../src/assets/section_bg3.png')] bg-cover bg-center">
         <div className="container">
-          <div className="py-40 ">
+          <div className="py-20 lg:py-40 ">
             <div className="pb-20 ">
               <div className="text-center flex flex-col items-center justify-center">
-                <div className="text-5xl  font-bold ">
+                <div className="text-3xl lg:text-5xl  font-bold ">
                   <span className="text-secondary-blue">Classes We Offer</span>
                 </div>
-                <p className="w-[70%] mt-10 text-xl text-secondary-blue/90">
+                <p className="w-[70%] mt-10 text-[14px] md:text-xl text-secondary-blue/90">
                   Our set he for firmament morning sixth subdue today the
                   darkness creeping gathered divide our let god moving today.
                   Moving in fourth air night bring upon lesser subdue fowl male
@@ -42,7 +42,17 @@ const Classes = () => {
                   // install Swiper modules
                   modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                   spaceBetween={50}
-                  slidesPerView={3}
+                  slidesPerView={1}
+                  breakpoints={{
+                    640: { slidesPerView: 2 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                  }}
+                  // breakpoints={{
+                  //   640: { slidesPerView: 2 },
+                  //   768: { slidesPerView: 3 },
+                  //   1024: { slidesPerView: 3 },
+                  // }}
                   navigation
                   autoplay={{
                     delay: 3000,
@@ -86,7 +96,7 @@ const Classes = () => {
                                       <div className="text-xl font-extrabold text-[#4A3AFF] duration-500 hover:text-red-500 group-hover:text-primary">
                                         {title}
                                       </div>
-                                      <div className="text-gray-500  mt-2">
+                                      <div className="text-gray-500 text-[14px] md:text-xl  mt-2">
                                         {description}
                                       </div>
                                     </div>

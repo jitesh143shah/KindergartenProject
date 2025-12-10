@@ -32,7 +32,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-
   return (
     <>
       <div className="bg-primary text-white hidden lg:flex ">
@@ -107,7 +106,7 @@ const Navbar = () => {
             <div className="flex items-center justify-center gap-5 capitalize font-bold">
               <div className="hidden lg:flex items-center gap-5">
                 <ul className="flex gap-5 ">
-                  {Navlinks.map(({ link, title }, index) => (
+                  {Navlinks.map(({ link, title }, data, index) => (
                     <Link
                       to={link}
                       key={index}

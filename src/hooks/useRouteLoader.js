@@ -7,7 +7,10 @@ import { useLocation } from "react-router-dom";
  * - delay: ms to show loader (when not waiting for images)
  * - waitForImages: if true, the loader hides only after images on the new page load
  */
-export default function useRouteLoader({ delay = 800, waitForImages = false } = {}) {
+export default function useRouteLoader({
+  delay = 800,
+  waitForImages = false,
+} = {}) {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
 
