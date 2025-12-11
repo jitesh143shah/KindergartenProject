@@ -29,9 +29,10 @@ const Hero = () => {
           disableOnInteraction: false,
           pauseOnMouseEnter: true, // 👈 THIS WILL PAUSE ON HOVER
         }}
+        className="overflow-visible -z-12"
       >
         <SwiperSlide className="flex">
-          <div className="bg-[url('../../src/assets/hero.png')] bg-cover bg-center w-full h-full  ">
+          <div className="bg-[url('../../src/assets/hero.png')] bg-cover bg-center w-full h-full relative overflow-hidden ">
             <div className="container">
               <div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 py-15 lg:py-25 px-10">

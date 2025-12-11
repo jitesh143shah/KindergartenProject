@@ -39,8 +39,8 @@ const EventsSection = () => {
     <div>
       <div className="bg-[url('../../src/assets/section_bg2.png')]  bg-cover bg-center">
         <div className="container">
-          <div className="flex items-center justify-center p-20 lg:p-40 ">
-            <div className="w-full lg::w-[60%]">
+          <div className="flex items-center justify-center py-10 lg:p-40 ">
+            <div className="w-full lg:w-[60%]">
               <div className="flex gap-6 justify-center items-center flex-col px-15 py-15 bg-white rounded-4xl">
                 <div>
                   <div className="text-primary font-bold text-xl md:text-2xl">
@@ -78,9 +78,9 @@ const EventsSection = () => {
                   </Link>
                 </div>
                 <div className="counter">
-                  <div className="flex gap-4 flex-col md:flex-row  text-xl lg:text-3xl ">
+                  <div className="flex md:gap-4 gap-1  text-xl lg:text-3xl ">
                     {/* Days */}
-                    <div className="bg-[#FFF8E6] p-2 lg:p-4 rounded-lg text-center w-20">
+                    <div className="bg-[#FFF8E6] p-1 lg:p-4 rounded-lg text-center w-10 md:w-20">
                       <div className=" font-bold text-[#2B2E9F]">
                         {String(timeLeft.days).padStart(2, "0")}
                       </div>
@@ -88,7 +88,7 @@ const EventsSection = () => {
                     </div>
 
                     {/* Hours */}
-                    <div className="bg-[#FFF8E6] p-2 lg:p-4 rounded-lg text-center w-20">
+                    <div className="bg-[#FFF8E6] p-1 lg:p-4 rounded-lg text-center w-10 md:w-20">
                       <div className=" font-bold text-[#2B2E9F]">
                         {String(timeLeft.hours).padStart(2, "0")}
                       </div>
@@ -96,7 +96,7 @@ const EventsSection = () => {
                     </div>
 
                     {/* Minutes */}
-                    <div className="bg-[#FFF8E6] p-2 lg:p-4 rounded-lg text-center w-20">
+                    <div className="bg-[#FFF8E6] p-1 lg:p-4 rounded-lg text-center w-10 md:w-20">
                       <div className=" font-bold text-[#2B2E9F]">
                         {String(timeLeft.minutes).padStart(2, "0")}
                       </div>
@@ -104,7 +104,7 @@ const EventsSection = () => {
                     </div>
 
                     {/* Seconds */}
-                    <div className="bg-[#FFF8E6] p-2 lg:p-4 rounded-lg text-center w-20">
+                    <div className="bg-[#FFF8E6] p-1 lg:p-4 rounded-lg text-center w-10 md:w-20">
                       <div className=" font-bold text-[#2B2E9F]">
                         {String(timeLeft.seconds).padStart(2, "0")}
                       </div>

@@ -40,7 +40,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex  justify-between">
+            <div className="grid grid-cols-1 md:grid-cols-2">
               <div>
                 <span className="font-bold text-xl lg:text-2xl  py-2">
                   Quick Links

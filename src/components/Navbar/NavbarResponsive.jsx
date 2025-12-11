@@ -30,13 +30,30 @@ const NavbarResponsive = ({ showMenu }) => {
                 </div>
               </div>
               <div className="">
-                <ul className="flex flex-col  hover: rounded-2xl p-2 hover:bg-primary/40">
+                <ul className="flex flex-col   rounded-2xl p-2 ">
                   {Navlinks.map((data, index) => (
                     <li
                       key={index}
-                      className="uppercase font-bold text-white text-[14px]  p-2 rounded-2xl duration-500 flex justify-center hover:bg-primary-blue/40 items-center hover:text-secondary  hover:underline "
+                      className="uppercase font-bold text-white text-[14px] p-2 rounded-2xl duration-500 flex flex-col items-start hover:bg-primary/40 hover:text-secondary"
                     >
                       <Link to={data.link}> {data.title}</Link>
+                      {/* Mobile MENU */}
+                      {data.submenu && (
+                        <div>
+                          <div>
+                            <div></div>
+                          </div>
+                        </div>
+                      )}
+                      {/* <div>
+                        {data.sublink.map((subdata) => (
+                          <div>
+                            <div>
+                              <div>{subdata.name}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div> */}
                     </li>
                   ))}
                 </ul>
