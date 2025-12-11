@@ -64,11 +64,11 @@ const Navbar = () => {
             </div>
             <div className="flex items-center justify-center gap-5 ">
               <ul className="flex  gap-5 ">
-                {SocialLinks.map(({ icons: Icons }, index) => {
+                {SocialLinks.map(({ icons: Icons }, social) => {
                   const IconComponent = Icons;
                   return (
                     <li
-                      key={index}
+                      key={social}
                       className="hover:scale-x-[-1] hover:bg-secondary bg-white/20 rounded-full  px-1 py-1 duration-500"
                     >
                       <Link to="/">
@@ -91,10 +91,10 @@ const Navbar = () => {
         </div>
         <div
           //  className="bg-white shadow-md "
-          className={`w-full  duration-500 transition: all 0.4s ease;  ${
+          className={`w-full  duration-500 transition-all ease-linear  ${
             isFixed
-              ? "fixed top-0 left-0  bg-white shadow-md z-50 duration-500 "
-              : "relative bg-transarent  bg-white shadow-md duration-500 "
+              ? "fixed top-0 left-0  bg-white shadow-md z-50  "
+              : "relative bg-transarent  bg-white shadow-md  "
           }`}
         >
           <div className="container">
@@ -107,9 +107,9 @@ const Navbar = () => {
               <div className="flex items-center justify-center gap-5 capitalize font-bold">
                 <div className="hidden lg:flex items-center gap-5">
                   <ul className="flex gap-5 ">
-                    {Navlinks.map((data, index) => (
+                    {Navlinks.map((data, navbar) => (
                       <li
-                        key={index}
+                        key={navbar}
                         className="text-secondary-blue hover:text-primary group md:cursor-pointer  "
                       >
                         <Link

@@ -73,11 +73,11 @@ const Classes = () => {
                             price,
                             closed,
                           },
-                          index
+                          classesindex
                         ) => (
                           <ul className="flex gap-5 px-5 py-5">
                             <SwiperSlide className="flex">
-                              <li key={index} className="">
+                              <li key={classesindex} className="">
                                 <div className="bg-white rounded-4xl shadow-md overflow-hidden border-none hover:shadow-xl duration-300 group">
                                   <div className="relative">
                                     <img

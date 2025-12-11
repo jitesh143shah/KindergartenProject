@@ -2,7 +2,7 @@
 
 export default function Loader() {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-white z-10000">
       <div className="relative w-20 h-20 flex items-center justify-center">
         <div
           className="absolute w-30 h-30 border-2 border-gray-200 rounded-full animate-spin"

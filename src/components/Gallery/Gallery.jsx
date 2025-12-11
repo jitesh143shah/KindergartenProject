@@ -34,10 +34,10 @@ const Gallery = () => {
               }}
             >
               <ul className="flex">
-                {GalleryLinks.map((data, index) => {
+                {GalleryLinks.map((data, galleryindex) => {
                   const Icon = data.icon;
                   return (
-                    <li key={index}>
+                    <li key={galleryindex}>
                       <SwiperSlide className="group">
                         <div className="relative">
                           <span>

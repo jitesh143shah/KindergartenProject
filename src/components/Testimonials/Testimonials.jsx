@@ -34,8 +34,8 @@ const Testimonials = () => {
             >
               <ul className="flex items-center justify-center">
                 {TestimonialsLinks.map((data, index) => (
-                  <li key={index}>
-                    <SwiperSlide className="group">
+                  <>
+                    <SwiperSlide className="group" key={`testimonial-${index}`}>
                       <div className="flex flex-col items-center">
                         <div className="flex flex-col items-center gap-10 lg:gap-15">
                           <div className="flex  justify-center">
@@ -66,7 +66,7 @@ const Testimonials = () => {
                         </div>
                       </div>
                     </SwiperSlide>
-                  </li>
+                  </>
                 ))}
               </ul>
             </Swiper>

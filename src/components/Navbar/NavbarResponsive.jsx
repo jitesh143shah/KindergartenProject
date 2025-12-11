@@ -2,11 +2,15 @@ import { Logo } from "../../images";
 import { Link } from "react-router-dom";
 import { Navlinks } from "../../constant/Navlinks";
 import { SocialLinks } from "../../constant/SocialLinks";
-import { FaHeart, FaPhoneAlt } from "react-icons/fa";
+import { FaChevronUp, FaHeart, FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
+import { useState } from "react";
 
 const NavbarResponsive = ({ showMenu }) => {
+  const [heading, setHeading] = useState("");
+  const [subHeading, setSubHeading] = useState("");
+
   return (
     <>
       <div>
@@ -30,35 +34,89 @@ const NavbarResponsive = ({ showMenu }) => {
                 </div>
               </div>
               <div className="">
-                <ul className="flex flex-col   rounded-2xl p-2 ">
-                  {Navlinks.map((data, index) => (
+                <ul className=" rounded-2xl p-2 ">
+                  {Navlinks?.map((data, index) => (
                     <li
-                      key={index}
-                      className="uppercase font-bold text-white text-[14px] p-2 rounded-2xl duration-500 flex flex-col items-start hover:bg-primary/40 hover:text-secondary"
+                      key={`${data.title}-${index}`}
+                      className="uppercase font-bold text-white text-[14px] p-2 rounded-2xl duration-500  "
                     >
-                      <Link to={data.link}> {data.title}</Link>
-                      {/* Mobile MENU */}
-                      {data.submenu && (
-                        <div>
+                      <div
+                        onClick={() => {
+                          heading !== data.title
+                            ? setHeading(data.title)
+                            : setHeading("");
+                          setSubHeading("");
+                        }}
+                      >
+                        <h1 className="flex justify-between">
+                          <Link to={data?.link}>{data.title}</Link>
+                          {/* Only show arrow if dropdown exists */}
+                          {data.sublink && data.sublink.length > 0 && (
+                            <span
+                              className={`transition-transform duration-500 ${
+                                heading === data.title ? "rotate-180" : ""
+                              }`}
+                            >
+                              <FaChevronUp />
+                            </span>
+                          )}
+                        </h1>
+                      </div>
+
+                      <div
+                        className={`${
+                          heading === data.title ? "md:hidden" : "hidden"
+                        }`}
+                      >
+                        {/* SUB MENU */}
+                        {data.sublink?.map((subdata, subindex) => (
                           <div>
-                            <div></div>
-                          </div>
-                        </div>
-                      )}
-                      {/* <div>
-                        {data.sublink.map((subdata) => (
-                          <div>
-                            <div>
-                              <div>{subdata.name}</div>
+                            <div key={`${subdata.name}-${subindex}`}>
+                              <h1
+                                className="py-4 pl-7 font-semibold pr-0 md:pr-5 flex justify-between"
+                                onClick={() =>
+                                  subHeading !== subdata.name
+                                    ? setSubHeading(subdata.name)
+                                    : setSubHeading("")
+                                }
+                              >
+                                {subdata.name}
+                                <span
+                                  className={`transition-transform duration-500 ${
+                                    subHeading === subdata.name
+                                      ? "rotate-180"
+                                      : ""
+                                  }`}
+                                >
+                                  <FaChevronUp />
+                                </span>
+                              </h1>
+
+                              <div
+                                className={`${
+                                  subHeading === subdata.name
+                                    ? "md:hidden"
+                                    : "hidden"
+                                }`}
+                              >
+                                {/* {sublinks Menu} */}
+                                {subdata.submenulink.map((submenudata) => (
+                                  <div className="py-3 pl-14">
+                                    <Link to={submenudata.link}>
+                                      {submenudata.name}
+                                    </Link>
+                                  </div>
+                                ))}
+                              </div>
                             </div>
                           </div>
                         ))}
-                      </div> */}
+                      </div>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="flex items-center justify-center gap-5 sm:gap-10 flex-col sm:flex-row  font-bold">
+              <div className="flex items-center  justify-center gap-5 sm:gap-10 flex-col   font-bold">
                 <Link
                   to="/"
                   className="flex justify-center items-center
@@ -66,7 +124,7 @@ const NavbarResponsive = ({ showMenu }) => {
                      py-2 px-13 sm:py-4 rounded-2xl before:z-[-10]
                       before:content-[''] before:absolute before:top-[-100%] before:left-0
                       before:w-full before:h-full before:bg-primary before:transition-all before:duration-500
-                      hover:before:top-0 z-10 text-white "
+                      hover:before:top-0 z-10 text-white  "
                 >
                   <button>Enroll Now</button>
                 </Link>

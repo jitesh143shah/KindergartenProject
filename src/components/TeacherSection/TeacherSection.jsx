@@ -63,8 +63,8 @@ const TeacherSection = () => {
                     }}
                   >
                     <ul>
-                      {TeachersLinks.map((data, index1) => (
-                        <li key={index1}>
+                      {TeachersLinks.map((data, teacherindex) => (
+                        <li key={teacherindex}>
                           <SwiperSlide className="group">
                             <span className="relative -z-10  ">
                               <img

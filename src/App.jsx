@@ -32,7 +32,7 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   // set waitForImages: true if you want loader to wait until images load on each page
-  const loading = useRouteLoader({ delay: 700, waitForImages: false });
+  const loading = useRouteLoader({ delay: 900, waitForImages: false });
 
   return (
     <>

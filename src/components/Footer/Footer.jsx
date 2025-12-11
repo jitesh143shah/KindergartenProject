@@ -24,11 +24,11 @@ const Footer = () => {
               </p>
               <div>
                 <ul className="flex  gap-5 py-10 ">
-                  {SocialLinks.map(({ icons: Icon, href }, index) => {
+                  {SocialLinks.map(({ icons: Icon, href }, footersocail) => {
                     const IconComponent = Icon;
                     return (
                       <li
-                        key={index}
+                        key={footersocail}
                         className="px-2 py-2 bg-secondary-blue/20 hover:bg-primary duration-500  rounded-full"
                       >
                         <Link to={href} target="_blank">
@@ -47,9 +47,9 @@ const Footer = () => {
                 </span>
                 <div>
                   <ul>
-                    {Navlinks.map(({ title, link }, index) => (
+                    {Navlinks.map(({ title, link }, navlinkindex) => (
                       <li
-                        key={index}
+                        key={navlinkindex}
                         className="py-2 capitalize hover:underline duration-500"
                       >
                         <Link to={link}>{title}</Link>
