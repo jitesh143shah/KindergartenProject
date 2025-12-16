@@ -18,7 +18,7 @@ import "swiper/css/autoplay";
 const Testimonials = () => {
   return (
     <div>
-      <div className="bg-[url('../../src/assets/section_bg3.png')] bg-cover bg-center">
+      <div className="bg-[url('./assets/section_bg3.png')] bg-cover  bg-center">
         <div className="container py-20 md:py-40">
           <div>
             <Swiper // install Swiper modules

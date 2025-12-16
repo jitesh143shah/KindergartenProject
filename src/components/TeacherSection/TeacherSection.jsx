@@ -64,8 +64,8 @@ const TeacherSection = () => {
                   >
                     <ul>
                       {TeachersLinks.map((data, teacherindex) => (
-                        <li key={teacherindex}>
-                          <SwiperSlide className="group">
+                        <li>
+                          <SwiperSlide className="group" key={teacherindex}>
                             <span className="relative -z-10  ">
                               <img
                                 src={data.image}

@@ -20,7 +20,7 @@ import "swiper/css/autoplay";
 const Classes = () => {
   return (
     <div>
-      <div className="bg-[url('../../src/assets/section_bg3.png')] bg-cover bg-center">
+      <div className="bg-[url('./assets/section_bg3.png')] bg-cover  bg-center">
         <div className="container">
           <div className="py-20 lg:py-40 ">
             <div className="pb-20 ">
@@ -76,8 +76,8 @@ const Classes = () => {
                           classesindex
                         ) => (
                           <ul className="flex gap-5 px-5 py-5">
-                            <SwiperSlide className="flex">
-                              <li key={classesindex} className="">
+                            <SwiperSlide className="flex" key={classesindex}>
+                              <li className="">
                                 <div className="bg-white rounded-4xl shadow-md overflow-hidden border-none hover:shadow-xl duration-300 group">
                                   <div className="relative">
                                     <img

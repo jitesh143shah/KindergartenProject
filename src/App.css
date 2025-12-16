@@ -13,3 +13,7 @@
 .swiper-button-next:hover {
   background: #ffffffd2;
 }
+* {
+  /* font-family: Times New Roman (serif); */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

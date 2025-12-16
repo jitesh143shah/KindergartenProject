@@ -20,14 +20,14 @@ const NavbarResponsive = ({ showMenu }) => {
            fixed h-screen w-[75%] bg-primary-blue
            flex flex-col justify-between px-8 py-6  z-50
            duration-500 transition-all ease-in-out 
-           overflow-y-scroll    
+           overflow-y-scroll 
    
            ${showMenu ? "top-0 left-0" : "-top-[100%] -left-[0%]"}
             `}
           >
-            <div className="flex flex-col gap-4 sm:gap-8">
+            <div className="flex flex-col gap-4 sm:gap-6">
               <div className="flex items-center justify-between flex-col">
-                <div className="my-10 flex items-center justify-center hover:bg-primary/40 duration-500 p-3 rounded-2xl">
+                <div className="flex items-center justify-center hover:bg-primary/40 duration-500  rounded-2xl">
                   <Link to="/" className="">
                     <img src={Logo} alt={Logo} />
                   </Link>
@@ -49,7 +49,7 @@ const NavbarResponsive = ({ showMenu }) => {
                         }}
                       >
                         <h1 className="flex justify-between">
-                          <Link to={data?.link}>{data.title}</Link>
+                          <Link to={data.link}>{data.title}</Link>
                           {/* Only show arrow if dropdown exists */}
                           {data.sublink && data.sublink.length > 0 && (
                             <span
@@ -69,9 +69,9 @@ const NavbarResponsive = ({ showMenu }) => {
                         }`}
                       >
                         {/* SUB MENU */}
-                        {data.sublink?.map((subdata, subindex) => (
-                          <div>
-                            <div key={`${subdata.name}-${subindex}`}>
+                        {data.sublink?.map((subdata, index) => (
+                          <div key={index}>
+                            <div>
                               <h1
                                 className="py-4 pl-7 font-semibold pr-0 md:pr-5 flex justify-between"
                                 onClick={() =>
@@ -100,13 +100,18 @@ const NavbarResponsive = ({ showMenu }) => {
                                 }`}
                               >
                                 {/* {sublinks Menu} */}
-                                {subdata.submenulink.map((submenudata) => (
-                                  <div className="py-3 pl-14">
-                                    <Link to={submenudata.link}>
-                                      {submenudata.name}
-                                    </Link>
-                                  </div>
-                                ))}
+                                {subdata.submenulink.map(
+                                  (submenudata, index) => (
+                                    <div
+                                      className="py-3 pl-14"
+                                      key={`${submenudata.name}-${index}`}
+                                    >
+                                      <Link to={submenudata.link}>
+                                        {submenudata.name}
+                                      </Link>
+                                    </div>
+                                  )
+                                )}
                               </div>
                             </div>
                           </div>

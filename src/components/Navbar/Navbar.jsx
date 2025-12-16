@@ -1,5 +1,5 @@
 import { Navlinks } from "../../constant/Navlinks";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Logo } from "../../images";
 import { SocialLinks } from "../../constant/SocialLinks";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -32,15 +32,16 @@ const Navbar = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+  const { pathname } = useLocation();
   return (
     <>
-      <div className="relative overflow-visible z-[9999]">
+      <div className="relative overflow-hidden z-[9999]">
         <div className="bg-primary text-white hidden lg:flex ">
           <div
             className="container  flex justify-between 
         items-center py-2"
           >
-            <div className="flex flex-col lg:flex-row gap-0 lg:gap-7 text-[10px] lg:text-xl">
+            <div className="flex flex-col lg:flex-row gap-0 lg:gap-7 text-[10px] lg:text-[15px]">
               <Link
                 to="https://www.google.com/maps/search/?api=1&query=57/A,+Green+Lane,+NYC"
                 target="_blank"
@@ -64,11 +65,11 @@ const Navbar = () => {
             </div>
             <div className="flex items-center justify-center gap-5 ">
               <ul className="flex  gap-5 ">
-                {SocialLinks.map(({ icons: Icons }, social) => {
+                {SocialLinks.map(({ icons: Icons }, index) => {
                   const IconComponent = Icons;
                   return (
                     <li
-                      key={social}
+                      key={index}
                       className="hover:scale-x-[-1] hover:bg-secondary bg-white/20 rounded-full  px-1 py-1 duration-500"
                     >
                       <Link to="/">
@@ -81,7 +82,7 @@ const Navbar = () => {
 
               <Link
                 to="/signin"
-                className="flex items-center justify-center gap-3 group  "
+                className="flex items-center justify-center gap-3 group hover:underline duration-500 "
               >
                 <PiSignInBold className="group-hover:translate-x-2.5 duration-500" />
                 <span>Login</span>
@@ -93,7 +94,7 @@ const Navbar = () => {
           //  className="bg-white shadow-md "
           className={`w-full  duration-500 transition-all ease-linear  ${
             isFixed
-              ? "fixed top-0 left-0  bg-white shadow-md z-50  "
+              ? "fixed top-0 left-0  bg-white shadow-md z-50    "
               : "relative bg-transarent  bg-white shadow-md  "
           }`}
         >
@@ -106,11 +107,17 @@ const Navbar = () => {
               </div>
               <div className="flex items-center justify-center gap-5 capitalize font-bold">
                 <div className="hidden lg:flex items-center gap-5">
-                  <ul className="flex gap-5 ">
-                    {Navlinks.map((data, navbar) => (
+                  <ul className="flex  ">
+                    {Navlinks.map((data, index) => (
                       <li
-                        key={navbar}
-                        className="text-secondary-blue hover:text-primary group md:cursor-pointer  "
+                        key={index}
+                        className={` px-3 h-full transition duration-300 ${
+                          pathname === data.link
+                            ? "  text-primary bg-secondary/50 w-full  " // active link
+                            : " text-secondary-blue hover:text-primary group md:cursor-pointer  " //unactive link for the navbar
+                        }`}
+
+                        // className="text-secondary-blue hover:text-primary group md:cursor-pointer  "
                       >
                         <Link
                           to={data.link}
@@ -123,12 +130,12 @@ const Navbar = () => {
                         {/* SUBMENU */}
                         {data.submenu && (
                           <div>
-                            <div className="absolute pt-8 hidden group-hover:md:block hover:md:block ">
+                            <div className="absolute pt-8 hidden group-hover:md:block hover:md:block transform 0.3s  ease-in translate-x-0 hover: ">
                               <div>
                                 <div className="py-3">
-                                  <div className="w-4 h-4  bg-gray-100 absolute mt-1 left-3  rotate-45"></div>
+                                  <div className="w-4 h-4  bg-secondary/90 absolute mt-1 left-3  rotate-45"></div>
                                 </div>
-                                <div className="bg-gray-100 px-5 py-3.5 grid grid-cols-2 gap-5  ">
+                                <div className="bg-secondary/90 px-5 py-3.5 grid grid-cols-2 gap-5  ">
                                   {data.sublink.map((subdata, ind) => (
                                     <div
                                       key={ind}

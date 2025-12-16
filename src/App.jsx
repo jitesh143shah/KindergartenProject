@@ -27,7 +27,13 @@ import Home from "./Pages/Home";
 import AuthForm from "./Pages/Auth/AuthForm";
 import Loader from "./components/Loader/Loader";
 import useRouteLoader from "./hooks/useRouteLoader";
-import { Blog, Classes, PageNotFound } from "./Pages/imports";
+import {
+  AboutPg,
+  Blog,
+  ClassesPg,
+  Contact,
+  PageNotFound,
+} from "./Pages/imports";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -41,7 +47,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/classes" element={<Classes />} />
+        <Route path="/classes" element={<ClassesPg />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<AboutPg />} />
         <Route path="/signup" element={<AuthForm type="signup" />} />
         <Route path="/signin" element={<AuthForm type="signin" />} />
         <Route path="*" element={<PageNotFound />} />

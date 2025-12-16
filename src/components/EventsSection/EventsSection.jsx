@@ -37,7 +37,7 @@ const EventsSection = () => {
 
   return (
     <div>
-      <div className="bg-[url('../../src/assets/section_bg2.png')]  bg-cover bg-center">
+      <div className="bg-[url('./assets/section_bg2.png')]   bg-cover bg-center">
         <div className="container">
           <div className="flex items-center justify-center py-10 lg:p-40 ">
             <div className="w-full lg:w-[60%]">

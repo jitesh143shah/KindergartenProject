@@ -37,8 +37,8 @@ const Gallery = () => {
                 {GalleryLinks.map((data, galleryindex) => {
                   const Icon = data.icon;
                   return (
-                    <li key={galleryindex}>
-                      <SwiperSlide className="group">
+                    <li>
+                      <SwiperSlide className="group" key={galleryindex}>
                         <div className="relative">
                           <span>
                             <img
