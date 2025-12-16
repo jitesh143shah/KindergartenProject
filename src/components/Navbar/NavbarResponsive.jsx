@@ -17,12 +17,16 @@ const NavbarResponsive = ({ showMenu }) => {
         <div className=" z-0 ">
           <div
             className={` lg:hidden
-           fixed h-screen w-[75%] bg-primary-blue
+           fixed h-screen w-[75%] 
            flex flex-col justify-between px-8 py-6  z-50
            duration-500 transition-all ease-in-out 
-           overflow-y-scroll 
+           overflow-y-scroll
    
-           ${showMenu ? "top-0 left-0" : "-top-[100%] -left-[0%]"}
+           ${
+             showMenu
+               ? "top-0 left-0 bg-primary-blue"
+               : "-top-[100%] -left-[0%] "
+           }
             `}
           >
             <div className="flex flex-col gap-4 sm:gap-6">

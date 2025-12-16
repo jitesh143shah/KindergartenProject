@@ -35,7 +35,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
   return (
     <>
-      <div className="relative overflow-hidden z-[9999]">
+      <div className="relative z-[50] ">
         <div className="bg-primary text-white hidden lg:flex ">
           <div
             className="container  flex justify-between 
