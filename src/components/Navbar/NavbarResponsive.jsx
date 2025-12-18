@@ -29,7 +29,7 @@ const NavbarResponsive = ({ showMenu }) => {
            }
             `}
           >
-            <div className="flex flex-col gap-4 sm:gap-6">
+            <div className="flex flex-col gazp-4 sm:gap-6">
               <div className="flex items-center justify-between flex-col">
                 <div className="flex items-center justify-center hover:bg-primary/40 duration-500  rounded-2xl">
                   <Link to="/" className="">

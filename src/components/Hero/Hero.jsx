@@ -14,6 +14,7 @@ import "../../App.css";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import { HeroLinks } from "../../constant/HeroLinks";
 
 const Hero = () => {
   return (
@@ -24,6 +25,7 @@ const Hero = () => {
         spaceBetween={50}
         slidesPerView={1}
         navigation
+        loop={true}
         autoplay={{
           delay: 30000000,
           disableOnInteraction: false,
@@ -31,106 +33,43 @@ const Hero = () => {
         }}
         className="overflow-visible -z-12"
       >
-        <SwiperSlide className="flex">
-          <div className="bg-[url('./assets/hero.png')] bg-cover  bg-center w-full h-full relative overflow-hidden ">
-            <div className="container">
-              <div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 py-15 lg:py-25 ">
-                  <div className="flex  justify-center items-center">
-                    <div className="font-bold bg-white flex flex-col gap-5 sm:gap-8  py-25 sm:py-25 lg:py-30 px-10 lg:px-25 item-center rounded-[20%]">
-                      <h1 className="text-5xl sm:text-6xl lg:text-7xl text-secondary-blue ">
-                        Quality Learning
-                      </h1>
-                      <h3 className="text-3xl sm:text-4xl lg:text-5xl text-amber-300">
-                        For Every Child
-                      </h3>
-                      <div>
-                        <button className="py-3 px-4 lg:px-8 text-[14px] md:text-xl bg-primary rounded-full text-white  hover:bg-secondary duration-500">
-                          Explore Classes
-                        </button>
+        <ul>
+          {HeroLinks.map((hero, index) => (
+            <li>
+              {/* <SwiperSlide key={index}>
+                <div>{hero.heading}</div>
+              </SwiperSlide> */}
+              <SwiperSlide className="flex" key={index}>
+                <div
+                  className={` ${hero.bgimage} bg-cover  bg-center w-full h-full relative overflow-hidden `}
+                >
+                  <div className="container">
+                    <div>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 py-15 lg:py-25 ">
+                        <div className="flex  justify-center items-center">
+                          <div className="font-bold bg-white flex flex-col gap-5 sm:gap-8  py-25 sm:py-25 lg:py-30 px-10 lg:px-25 item-center rounded-[20%]">
+                            <h1 className="text-5xl sm:text-6xl lg:text-7xl text-secondary-blue ">
+                              {hero.heading}
+                            </h1>
+
+                            <h3 className="text-3xl sm:text-4xl lg:text-5xl text-amber-300">
+                              {hero.subheading}
+                            </h3>
+                            <div>
+                              <button className="py-3 px-4 lg:px-8 text-[14px] md:text-xl bg-primary rounded-full text-white  hover:bg-secondary duration-500">
+                                {hero.button}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="flex">
-          <div className="bg-[url('./assets/instra2.png')]  bg-cover bg-center">
-            <div className="container">
-              <div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 py-15 lg:py-25 ">
-                  <div className="flex  justify-center items-center">
-                    <div className="font-bold bg-white flex flex-col gap-5 sm:gap-8  py-25 sm:py-25 lg:py-30 px-10 lg:px-25 item-center rounded-[20%]">
-                      <h1 className="text-5xl sm:text-6xl lg:text-7xl text-secondary-blue ">
-                        Quality Learning
-                      </h1>
-                      <h3 className="text-3xl sm:text-4xl lg:text-5xl text-amber-300">
-                        For Every Child
-                      </h3>
-                      <div>
-                        <button className="py-3 px-4 lg:px-8 text-[14px] md:text-xl bg-primary rounded-full text-white  hover:bg-secondary duration-500">
-                          Explore Classes
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="flex">
-          <div className="bg-[url('./assets/instra3.png')]  bg-cover bg-center">
-            <div className="container">
-              <div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 py-15 lg:py-25 ">
-                  <div className="flex  justify-center items-center">
-                    <div className="font-bold bg-white flex flex-col gap-5 sm:gap-8  py-25 sm:py-25 lg:py-30 px-10 lg:px-25 item-center rounded-[20%]">
-                      <h1 className="text-5xl sm:text-6xl lg:text-7xl text-secondary-blue ">
-                        Quality Learning
-                      </h1>
-                      <h3 className="text-3xl sm:text-4xl lg:text-5xl text-amber-300">
-                        For Every Child
-                      </h3>
-                      <div>
-                        <button className="py-3 px-4 lg:px-8 text-[14px] md:text-xl bg-primary rounded-full text-white  hover:bg-secondary duration-500">
-                          Explore Classes
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="flex">
-          <div className="bg-[url('./assets/instra4.png')] bg-cover bg-center">
-            <div className="container">
-              <div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 py-15 lg:py-25 ">
-                  <div className="flex  justify-center items-center">
-                    <div className="font-bold bg-white flex flex-col gap-5 sm:gap-8  py-25 sm:py-25 lg:py-30 px-10 lg:px-25 item-center rounded-[20%]">
-                      <h1 className="text-5xl sm:text-6xl lg:text-7xl text-secondary-blue ">
-                        Quality Learning
-                      </h1>
-                      <h3 className="text-3xl sm:text-4xl lg:text-5xl text-amber-300">
-                        For Every Child
-                      </h3>
-                      <div>
-                        <button className="py-3 px-4 lg:px-8 text-[14px] md:text-xl bg-primary rounded-full text-white  hover:bg-secondary duration-500">
-                          Explore Classes
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+              </SwiperSlide>
+            </li>
+          ))}
+        </ul>
       </Swiper>
     </div>
   );
