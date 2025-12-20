@@ -5,7 +5,7 @@ const ClassesPg = () => {
   return (
     <>
       <div>
-        <div className="bg-[url('../../src/assets/instra2.png')]  bg-cover bg-no-repeat  bg-center w-full h-full ">
+        <div className="bg-[url('./assets/instra2.png')]  bg-cover bg-no-repeat  bg-center w-full h-full ">
           <div className="container w-l h-[250px] lg:h-[450px] flex justify-center items-center gap-5 group hover:text-white">
             <h1 className="text-4xl md:text-6xl lg:text-7xl  font-bold duration-300 ">
               Classes

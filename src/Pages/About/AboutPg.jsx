@@ -12,7 +12,7 @@ const AboutPg = () => {
     <>
       <div>
         <div className="container">
-          <div className="bg-[url('../../src/assets/hero.png')]  bg-cover bg-center w-full h-full ">
+          <div className="bg-[url('./assets/hero.png')]  bg-cover bg-center w-full h-full ">
             <div className="container w-l h-[450px] flex justify-center items-center gap-5 group hover:text-white duration-500">
               <h1 className="text-4xl md:text-6xl lg:text-7xl  font-bold ">
                 About

@@ -35,7 +35,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
   return (
     <>
-      <div className="relative z-[50] ">
+      <div className="relative z-[50]  ">
         <div className="bg-primary text-white hidden lg:flex ">
           <div
             className="container  flex justify-between 
@@ -95,7 +95,7 @@ const Navbar = () => {
           className={`w-full  duration-500 transition-all ease-linear  ${
             isFixed
               ? "fixed top-0 left-0  bg-white shadow-md z-50    "
-              : "relative bg-transarent  bg-white shadow-md  "
+              : "relative bg-transarent  bg-white shadow-md "
           }`}
         >
           <div className="container">
@@ -111,17 +111,17 @@ const Navbar = () => {
                     {Navlinks.map((data, index) => (
                       <li
                         key={index}
-                        className={` px-3 h-full transition duration-300 ${
-                          pathname === data.link
-                            ? "  text-primary bg-secondary/50 w-full  " // active link
-                            : " text-secondary-blue hover:text-primary group md:cursor-pointer  " //unactive link for the navbar
+                        className={` px-3 h-full transition duration-300  ${
+                          pathname == data.link
+                            ? "text-primary bg-secondary/50 w-full relative  " // active link
+                            : "text-secondary-blue hover:text-primary group md:cursor-pointer  " //unactive link for the navbar
                         }`}
 
                         // className="text-secondary-blue hover:text-primary group md:cursor-pointer  "
                       >
                         <Link
                           to={data.link}
-                          className="group flex flex-col gap-5 group relative z-[999] overflow-visible "
+                          className="group flex flex-col gap-5 group relative z-[999]  overflow-visible "
                         >
                           {data.title}
                           <p className="top-10 left-0   absolute h-[4px] bg-primary w-0 group-hover:w-full duration-500" />
@@ -129,43 +129,41 @@ const Navbar = () => {
 
                         {/* SUBMENU */}
                         {data.submenu && (
-                          <div>
-                            <div className="absolute pt-8 hidden group-hover:md:block hover:md:block transform 0.3s  ease-in translate-x-0 hover: ">
-                              <div>
-                                <div className="py-3">
-                                  <div className="w-4 h-4  bg-secondary/90 absolute mt-1 left-3  rotate-45"></div>
-                                </div>
-                                <div className="bg-secondary/90 px-5 py-3.5 grid grid-cols-2 gap-5  ">
-                                  {data.sublink.map((subdata, ind) => (
-                                    <div
-                                      key={ind}
-                                      className="text-sm font-bold p-2  hover:text-primary-blue  duration-500  flex flex-col  gap-3"
-                                    >
-                                      <div>
-                                        <h1 className="capitalize">
-                                          {subdata.name}
-                                        </h1>
-                                      </div>
-                                      <div>
-                                        {subdata.submenulink?.map(
-                                          (submenudata, index2) => (
-                                            <div
-                                              key={index2}
-                                              className="flex flex-col gap-5 "
-                                            >
-                                              <Link
-                                                to={submenudata.link}
-                                                className="font-semibold hover:underline duration-300 pt-2 hover:text-red-500"
-                                              >
-                                                {submenudata.name}
-                                              </Link>
-                                            </div>
-                                          )
-                                        )}
-                                      </div>
+                          <div className="absolute pt-8 hidden group-hover:md:block hover:md:block transform 0.3s  ease-in translate-x-0 hover: ">
+                            <div>
+                              <div className="py-3">
+                                <div className="w-4 h-4  bg-secondary/90 absolute mt-1 left-3  rotate-45"></div>
+                              </div>
+                              <div className="bg-secondary/90 px-5 py-3.5 grid grid-cols-2 gap-5  ">
+                                {data.sublink.map((subdata, ind) => (
+                                  <div
+                                    key={ind}
+                                    className="text-sm font-bold p-2  hover:text-primary-blue  duration-500  flex flex-col  gap-3"
+                                  >
+                                    <div>
+                                      <h1 className="capitalize">
+                                        {subdata.name}
+                                      </h1>
                                     </div>
-                                  ))}
-                                </div>
+                                    <div>
+                                      {subdata.submenulink?.map(
+                                        (submenudata, index2) => (
+                                          <div
+                                            key={index2}
+                                            className="flex flex-col gap-5 "
+                                          >
+                                            <Link
+                                              to={submenudata.link}
+                                              className="font-semibold hover:underline duration-300 pt-2 hover:text-red-500"
+                                            >
+                                              {submenudata.name}
+                                            </Link>
+                                          </div>
+                                        )
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
                               </div>
                             </div>
                           </div>
